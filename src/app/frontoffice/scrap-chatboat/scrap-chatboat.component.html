@@ -1,0 +1,126 @@
+
+   <body>
+       <!--navbar-sec-->
+     <app-header-component></app-header-component>
+      <!--navbar-sec-->
+      <!--banner-->
+     
+     <!--banner-->
+     <!--blog-->
+            <div class="row py-3 px-3" >
+              <div class="col col-lg-9">
+                <section class="blog-posts w-100 ">
+                    <div id="blog" class="col-xl-12" >
+                       <div class="row">
+                         
+                        <div class="col-xl-2 col-lg-6 col-md-6" *ngFor="let video of  videos">
+                            <div class="float-left w-100 post-item border mb-4">
+                               <div class="post-item-wrap position-relative">
+                                  <div class="post-image">
+                                     <a href="single-post.html">
+                                     <img alt="" src={{video.thumbnail}}>
+                                     <img src="assets/image/standard_post_img02.jpg" alt="" *ngIf="!video.thumbnail">
+
+                                     </a>
+                                     <span class="post-meta-category">
+                                     <a href="#">Lifestyle</a>
+                                     </span>
+                                     <!--post-image-->
+                                  </div>
+                                  <div class="post-item-description">
+                                     <span class="post-meta-date">
+                                     <i class="fas fa-calendar-alt"></i>Jan 21, 2022</span>
+                                     <span class="post-meta-comments">
+                                     <a href="#"><span class="fa fa-comments-o"></span>33 Comments</a>
+                                     </span>
+                                     <h2>
+                                        <a href="single-post.html">{{video.title}} </a>
+                                     </h2>
+                                     <p>Curabitur pulvinar euismod anteac sagittisante posuere sdfrsac.</p>
+                                     <a href={{video.link}} class="item-link">watch video <span class="fa fa-arrow-right"></span></a>
+                                     <!--post-item-description-->
+                                  </div>
+                                  <!--post-item-wrap-->
+                               </div>
+                               <!--post-item-->
+                            </div>
+                            <!--col-->
+                         </div>
+                         
+                       </div>
+                       <!--blog-->
+                    </div>
+                 </section>
+              </div>
+               <div class=" col-lg-3" >
+                <section >
+                    <div class="container ">
+                  
+                      <div class="row d-flex justify-content-center">
+                        
+                  
+                          <div class="card" id="chat1" style="border-radius: 15px;">
+                            <div
+                              class="card-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0"
+                              style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                              <i class="fas fa-angle-left"></i>
+                              <p class="mb-0 fw-bold">Live chatBoat</p>
+                              <i class="fas fa-times"></i>
+                            </div>
+                            <div class="card-body">
+                  
+                              <div class="d-flex flex-row justify-content-start mb-4">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                  alt="avatar 1" style="width: 45px; height: 100%;">
+                                <div class="p-3 ms-3 py-2" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+                                  <p class="small mb-0 py-2"  >Hello </p>
+                                </div>
+                              </div>
+                  
+                              <div class="d-flex flex-row justify-content-end mb-4" *ngIf="message!=null">
+                                <div class="p-3 me-3 border" style="border-radius: 15px; background-color: #fbfbfb;">
+                                  <p class="small mb-0">{{message}}</p>
+                                </div>
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                  alt="avatar 1" style="width: 45px; height: 100%;">
+                              </div>
+                  
+                            
+                  
+                              <div class="d-flex flex-row justify-content-start mb-4" *ngIf="reponse!=null">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                  alt="avatar 1" style="width: 45px; height: 100%;">
+                                <div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+                                  <p class="small mb-0">{{reponse}}</p>
+                                </div>
+                              </div>
+                  
+                              <div class="form-outline">
+                                <textarea class="form-control" id="textAreaExample" name="question"  rows="4"></textarea>
+                                <label class="form-label" id="textarealabel" for="textAreaExample" >Type your message</label>
+                                
+                              </div>
+                              <button type="submit" class="btn btn-primary" (click)="onSubmit()"  >send</button>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+                  
+                  </section>
+                  <!--sidebar-->
+               </div>
+               <!--row-->
+            </div>
+         <!--container-->
+      <!--form-sec-->
+     
+      <!--form-sec-->
+      <!--footer-sec-->
+    <app-footer-component></app-footer-component>
+  
+  
+   </body>
+

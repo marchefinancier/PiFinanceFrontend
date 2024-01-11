@@ -1,0 +1,91 @@
+
+   
+<!-- Mirrored from html.designingmedia.com/finanzo/two-column.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Nov 2023 17:22:01 GMT -->
+
+   <body>
+      <!--navbar-sec-->
+    <app-header-component></app-header-component>
+      <!--navbar-sec-->
+      <!--banner-->
+      <section class="sub-banner w-100 float-left shape-left shape-right d-table">
+        <div class="d-table-cell align-middle">
+           <div class="container">
+              <div class="banner-sec position-relative text-center">
+                 <h1 class="d-inline-block position-relative" style="font-size: 4em; margin-bottom: 50px">Mes Participations </h1>
+                 
+                 <div class="message-container">
+                  <p class="animated-message">« La formation est l'essence de tout succès. »<br> Arnaud Boti </p>
+              </div>
+                <!--
+                 <div class="banner-button d-inline-block">
+                    <a class="d-inline-block" href="index.html">Home</a>
+                    <span>-</span>
+                    <a class="d-inline-block" href="two-column.html">Blog</a>
+                 </div>
+
+                  
+                --> 
+              </div>
+           </div>
+        </div>
+        <div class="top-button position-relative">
+           <a id="button" href="#" class="show"></a>
+        </div>
+     </section>
+     <!--banner-->
+      <section class=" blog-posts w-100 float-left padding-top padding-bottom two-column-blog">
+         <div class="container ">
+            <div class="row">
+               <div id="blog" class="col-xl-12 wow fadeInUp">
+                  <div class="row" >
+                     <div class="col-xl-6 col-lg-6 col-md-6" *ngFor="let item of formations" [routerLink]="['/front/formation/mesformations',item.titre]">
+                        <div class="float-left w-100 post-item border mb-4">
+                           <div class="post-item-wrap position-relative">
+                              <div class="post-image">
+                                 <a >
+                                 <img alt="" [src]="getImageUrl(item.formation_Id)" alt="Formation Image">
+                                 </a>
+                                 <span class="post-meta-category">
+                                 <a href="#">{{item.titre}}</a>
+                                 </span>
+                                 <!--post-image-->
+                              </div>
+                              <div class="post-item-description">
+                                 <span class="post-meta-date">
+                                 <i class="fas fa-calendar-alt" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;">  Date Debut :{{item.dateDebut}}</i>  </span>
+                                 <span class="post-meta-date">
+                                    <i class="fas fa-calendar-alt" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;">  Date Fin : {{item.dateFin}} </i>  </span>
+                                 <span class="post-meta-comments">
+                                 <a href="#"><span class="fa fa-comments-o"></span></a>
+                                 </span>
+                                 <h2>
+                                    <a >{{item.typeFormation}} </a>
+                                 </h2>
+                                 <p>{{item.descriptionFormation}}</p>
+                                 
+                                 <!--post-item-description-->
+                              </div>
+                              <!--post-item-wrap-->
+                           </div>
+                           <!--post-item-->
+                        </div>
+                        <!--col-->
+                     </div>
+                     
+                  </div>
+                  <!--blog-->
+               </div>
+               <!--row-->
+            </div>
+            <!--container-->
+         </div>
+      </section>
+      <!--footer-sec-->
+  
+  <app-footer-component></app-footer-component>
+   <!--footer-sec-->
+     
+         
+   </body>
+
+<!-- Mirrored from html.designingmedia.com/finanzo/two-column.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Nov 2023 17:22:01 GMT -->

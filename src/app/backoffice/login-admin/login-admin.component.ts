@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ChatbotService } from 'src/app/core/services/chatbot.service';
 import { TokenstorageService } from 'src/app/core/services/tokenstorage.service';
 import { UserService } from 'src/app/core/user.service';
 
@@ -9,6 +10,7 @@ import { UserService } from 'src/app/core/user.service';
   styleUrls: ['./login-admin.component.css']
 })
 export class LoginAdminComponent {
+  response: any;
 
   form: any = {
     username: null,
@@ -23,7 +25,7 @@ export class LoginAdminComponent {
   currentUser: any;
   isLogin?: boolean;
 
-  constructor(private userserv:UserService, private storagetoken:TokenstorageService,private router: Router ) { }
+  constructor(private userserv:UserService, private storagetoken:TokenstorageService,private router: Router,private chatserv:ChatbotService ) { }
 
 
   ngOnInit(): void {
@@ -69,5 +71,7 @@ export class LoginAdminComponent {
       
     });
   }
+
+
 
 }

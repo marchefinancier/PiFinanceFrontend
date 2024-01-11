@@ -40,7 +40,11 @@ export class SignUpClientComponent {
         }
       }
     }
-  
+    
+    onSubmit(){
+    this.Register()
+  }
+
     Register() {
       this.userserv.register(this.form).subscribe({
         next: (data) => {
