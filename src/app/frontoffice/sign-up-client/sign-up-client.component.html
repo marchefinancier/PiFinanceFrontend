@@ -11,40 +11,54 @@
   
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                  <form class="mx-1 mx-md-4" >
+                  <form class="mx-1 mx-md-4" #f="ngForm" (ngSubmit)="onSubmit()" >
   
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" name="username" [(ngModel)]="form.username" />
+                        <input type="text" id="form3Example1c" class="form-control" name="username" [(ngModel)]="form.username" required  #f="ngModel" />
                         <label class="form-label" for="form3Example1c" >Your Username</label>
+                       
+                        <!--
+ <div *ngIf="f.invalid && f.touched"  class="alert alert-danger" >
+   <span *ngIf="f.hasError('required')">
+                            <p> this field is required</p>
+                          </span>
+                         <span   *ngIf=" f.touched && f.valid"  class="alert alert-success" >
+                          success 
+                         </span>
+                                               </div>  
+
+                        --> 
                       </div>
+                      
+
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" name="name" [(ngModel)]="form.name" />
+                        <input type="text" id="form3Example1c" class="form-control" name="name" [(ngModel)]="form.name" required />
                         <label class="form-label" for="form3Example1c" >Your name</label>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" name="prenom" [(ngModel)]="form.prenom" />
+                        <input type="text" id="form3Example1c" class="form-control" name="prenom" [(ngModel)]="form.prenom" required/>
                         <label class="form-label" for="form3Example1c" >Your lastname</label>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" name="address" [(ngModel)]="form.address" />
+                        <input type="text" id="form3Example1c" class="form-control" name="address" [(ngModel)]="form.address"required />
                         <label class="form-label" for="form3Example1c" >Your address </label>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c" class="form-control" name="email" [(ngModel)]="form.email" />
+                        <input type="email" id="form3Example3c" class="form-control" name="email" [(ngModel)]="form.email" required/>
                         <label class="form-label" for="form3Example3c">Your Email</label>
                       </div>
                     </div>
@@ -52,7 +66,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control " name="password" [(ngModel)]="form.password"/>
+                        <input type="password" id="form3Example4c" class="form-control " name="password" [(ngModel)]="form.password" required/>
                         <label class="form-label" for="form3Example4c">Password</label>
                       </div>
                     </div>
@@ -60,12 +74,12 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example4c" class="form-control " name="tel" [(ngModel)]="form.tel"/>
+                        <input type="text" id="form3Example4c" class="form-control " name="tel" [(ngModel)]="form.tel"required/>
                         <label class="form-label" for="form3Example4c">Your PhoneNumber</label>
                       </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" >
                       <label for="birth">Date de naissance</label>
                       <input
                         type="date"
@@ -97,7 +111,7 @@
 
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg" (click)="Register()">Register</button>
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!f.form.valid" >Register</button>
                     </div>
                   </form>
   

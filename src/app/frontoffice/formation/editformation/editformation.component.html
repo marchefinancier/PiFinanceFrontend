@@ -1,0 +1,92 @@
+<div class="form-section px-1 py-3 position-relative">
+    <div class="container">
+       <div class="form-inner-sec position-relative">
+          <div class="form-headings text-center">
+             <h5>FINANZO</h5>
+             <h2>Edit Formation</h2>
+          </div>
+          <div class="form-text">
+             <form  (ngSubmit)="onSubmit()" class="form-con container " style="display: flex; flex-direction: column; justify-content: flex-start; ">
+                <div class="list-unstyled row my-3" >
+                   
+                    <div class="col col-md-6 col-sm-12" >
+                        <input class="w-100" placeholder="Title" type="text" name="titre" [(ngModel)]="dataFromParent.titre">
+                    </div>
+
+                    <div class="col col-md-6 col-sm-12">
+                        <select class="w-100" name="etat" style="  padding: 17px 31px;
+                        border-radius: 50px;
+                        border: none;
+                        font-size: 18px;
+                        line-height: 28px;"
+                         [(ngModel)]="formationData.etat">
+                          <option value="PLANIFIER">Planifier</option>
+                          <option value="EN_COURS">En cours</option>
+                          <option value="REALISER">Réaliser</option>
+                          <option value="ANNULER">Annuler</option>
+                        </select>
+                      </div>
+                      
+
+                </div>
+                <div class="list-unstyled row" >
+                    <div class="col col-md-6 col col-sm-12">
+                        <input class="w-100" placeholder="Datedebut" type="date" name="dateDebut"  [(ngModel)]="dataFromParent.dateDebut">
+                    </div>
+                    <div class="col col-md-6 col-sm-12">
+                   <input class="w-100" type="date" placeholder="Datefin" name="dateFin" [(ngModel)]="dataFromParent.dateFin" >
+                    </div>
+
+                </div>
+
+                <div class="list-unstyled row my-3"  >
+                    <div class="col col-md-6 col col-sm-12">
+                        <input class="w-100" placeholder="Duree" type="number" name="duree"  [(ngModel)]="dataFromParent.duree">
+                    </div>
+                   
+                    <div class="col col-md-6 col-sm-12">
+                        <input class="w-100" type="text" placeholder="Type" name="typeFormation" [(ngModel)]="dataFromParent.typeFormation" >
+                         </div>
+
+                </div>
+                <div class="list-unstyled row my-3"  >
+                <div class="col col-md-12 col-sm-12">
+                    <textarea class="w-100" type="text" placeholder="Description" name="descriptionFormation" [(ngModel)]="dataFromParent.descriptionFormation" ></textarea>
+                     </div>
+
+              </div>
+              <div class="list-unstyled row my-3">
+                <div class="col col-md-12 col-sm-12">
+                    <label class="btn btn-rounded" style="background-color: #fa9f3c">
+                        Choose File
+                        <input class="d-none" type="file" accept="image/*" (change)="onFileSelected1($event)" >
+                    </label>
+                </div>
+                
+</div>
+              <div class="list-unstyled row my-3"   >
+                
+                <div class="col col-md-3 col-sm-3">
+                    
+                     </div>
+                     <div class="col col-md-3 col-sm-3">
+                        <input  class="form-button my-3 " type="submit"  value="Edit Now">
+
+                     </div>
+                     <div class="col col-md-3 col-sm-3">
+                    
+                     </div>
+              </div>
+
+
+             </form>
+             
+              </div>
+            
+          </div>
+       </div>
+    </div>
+    <!-- editformation.component.html -->
+
+  
+

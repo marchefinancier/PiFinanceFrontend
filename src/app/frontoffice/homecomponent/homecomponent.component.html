@@ -4,13 +4,13 @@
   
       <!--navbar-sec-->
       <!--banner-sec-->
-      <section class="banner-con w-100 float-left shape-left shape-right d-table">
+      <section class="banner-con w-100 float-left shape-left shape-right d-table" *ngIf="isLogin==false">
             <div class="d-table-cell align-middle">
                <div class="container">
                   <div class="banner-sec position-relative">
                      <h1 class="position-relative d-inline-block" >La tendance du marché <br>  est votre amie </h1>
                      <p>suivez-là et augmentez vos chances <br>  d’obtenir un rendement plus élevé.</p>
-                     <div class="generic-button">
+                     <div class="generic-button" >
                         <a class="d-inline-block" routerLink="/front/signin">SignIn</a>
                         <a class="d-inline-block" routerLink="/front/signup">SignUp</a>
                      </div>

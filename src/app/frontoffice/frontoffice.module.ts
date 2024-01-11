@@ -14,6 +14,7 @@ import { VerifyAccountComponent } from './verify-account/verify-account.componen
 import { VerifyResetPassCodeComponent } from './verify-reset-pass-code/verify-reset-pass-code.component';
 import { ResetnewpassComponent } from './resetnewpass/resetnewpass.component';
 import { FormsModule } from '@angular/forms';
+import { ScrapChatboatComponent } from './scrap-chatboat/scrap-chatboat.component';
 
 
 
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     VerifyAccountComponent,
     VerifyResetPassCodeComponent,
     ResetnewpassComponent,
+    ScrapChatboatComponent,
     
   ],
   imports: [
