@@ -1,0 +1,20 @@
+<div class="  card mt-3">
+
+    <h1 align="center">Show Best Posts</h1>
+
+    <div class="container" >
+        <div class="row">
+            <div *ngFor ="let i of data" class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.user.firstName}}</h5>
+                      <p class="card-text">{{i.text}}</p>
+                      <a href="#" class="btn btn-primary">{{i.score}}</a>
+                    </div>
+                  </div>
+            </div>
+           
+        </div>
+    </div>
+
+</div>

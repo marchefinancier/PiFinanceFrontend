@@ -1,0 +1,104 @@
+<div class="container card mt-3">
+    <div class="card shadow ">
+        <h1 align="center">Add Forum</h1>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"> Add Post</label>
+            <textarea (keydown.enter)="addForum()" name="forum" class="form-control" [(ngModel)]="TextPost"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div *ngIf="showInp">
+            <button type="button" (click)="editPost()" class="btn btn-success mb-3">Update</button>
+        </div>
+    </div>
+
+    <div *ngIf="!showInp">
+        <button type="button" (click)="addForum()" class="btn btn-primary mb-3">Add Post</button>
+    </div>
+    <button (click)="Tri()" class="btn btn-info">Tri</button>
+    <hr>
+    <div class="container ">
+        <div class=" bootstrap snippets bootdey">
+            <div class="col-sm-8">
+                <div class="panel panel-white post mb-3" *ngFor="let x of data">
+                    <div class="post-heading">
+                        <div class="pull-left image">
+                            <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar"
+                                alt="user profile image">
+                        </div>
+                        <div class="pull-left meta">
+                            <div class="title h5">
+                                <a href="#"><b>{{x.user.firstName}}</b></a>
+                                made a post.
+                            </div>
+
+                        </div>
+                        <span class="badge rounded-pill bg-danger">{{x.likes}}</span>
+
+                    </div>
+                    <div class="post-description">
+                        <p>{{x.text}}</p>
+                        <div class="stats">
+                            <a (click)="likePost(x.idPost)" class="btn btn-default stat-item">
+                                <i class="fa-solid fa-thumbs-up " style="color:rgba(77, 77, 77, 0.3)"
+                                    *ngIf="x.score==0"></i>
+                                <i class="fa fa-thumbs-up icon " style="color:rgba(30, 82, 223, 0.774)"
+                                    *ngIf="x.score!=0"></i>
+
+                            </a>
+                            <a (click)="dislike(x.idPost)" class="btn btn-default stat-item">
+                                <i class="fa fa-thumbs-down icon " style="color:rgba(77, 77, 77, 0.3)"
+                                    *ngIf="x.score==0"></i>
+                                <i class="fa fa-thumbs-down icon " style="color:rgba(30, 82, 223, 0.774)"
+                                    *ngIf="x.score!=0"></i>
+                            </a>
+                            <a (click)="deletePost(x.idPost)" class="btn btn-default stat-item">
+                                <i class="fas fa-trash" style="color:rgba(247, 16, 16, 0.89)"></i>
+                            </a>
+                            <a (click)="getByid(x.idPost)" class="btn btn-default stat-item">
+                                <i class="fas fa-edit" style="color:rgba(62, 247, 16, 0.89)"></i>
+                            </a>
+
+                            <button><a href="http://twitter.com/share?text={{x.text}}&url={{x.idPost}}&hashtags=hashtag1,hashtag2,hashtag3" target="_blank">Twitter</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Add a comment"
+                                [ngModelOptions]="{updateOn: 'change'}" [value]="getCommentText(x.idPost)"
+                                [(ngModel)]="textComment" name="textCommet"
+                                (keydown.enter)="addComment(x.idPost,textComment)" type="text">
+                            <span class="input-group-addon">
+                            </span>
+                        </div>
+                        <button *ngIf="showBtn" (click)="editComment()" class="btn btn-info">Edit</button>
+                        <ul class="comments-list" *ngFor="let i of dataComment">
+                            <li class="comment" *ngIf="i.post.idPost==x.idPost">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">{{i.user.firstName}}</h4>
+                                        <h5 class="time">5 minutes ago</h5>
+                                    </div>
+                                    <p>{{i.text}}</p>
+                                </div>
+                                <a (click)="getCommentByid(i.idComment)" class="btn btn-default stat-item">
+                                    <i class="fas fa-edit" style="color:rgba(62, 247, 16, 0.89)"></i>
+                                </a>
+                                <a (click)="deleteCom(i.idComment)" class="btn btn-default stat-item">
+                                    <i class="fas fa-trash" style="color:rgba(247, 16, 16, 0.89)"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
