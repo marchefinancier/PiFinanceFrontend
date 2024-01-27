@@ -1,0 +1,112 @@
+<body>
+    <div class="container-scroller " >
+        <!-- partial:../../partials/_navbar.html -->
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_settings-panel.html -->
+
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <app-sidebar></app-sidebar>
+
+            <!-- partial -->
+            <div class="main-panel ">
+                <div class="content-wrapper ">
+                    <div class="row m-5">
+
+                        <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"> Formations</h4>
+
+                                    <p class="card-description">
+
+                                        Users <code>Liste formations :</code>
+
+                                    </p>
+
+
+
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>titre</th>
+                                                    <th>etat</th>
+                                                    <th>Duree</th>
+                                                    <th>Type</th>
+                                                    <th>Image</th>
+                                                    <th>Datedebut </th>
+                                                    <th>Datefin</th>
+
+                                                    <th style="text-align: center;">Actions</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let i of formations">
+                                                    <td>{{i.titre}}</td>
+                                                    <td>{{i.etat}}</td>
+                                                    <td>{{i.duree}}</td>
+                                                    <td>{{i.typeFormation}}</td>
+                                                    <td>
+                                                        <div class="image-container">
+                                                            <img  [src]="getImageUrl(i.formation_Id)" style="width: 100px; height: 100px; border: 3px solid #47817e; border-radius: 0%;" />
+                                                        </div>
+                                                        
+                                                      </td>
+                                                      
+                                                    <td>{{i.dateDebut}}</td>
+                                                    <td>{{i.dateFin}}</td>
+
+
+                                                    <td>
+                                                        <div>
+
+                                                            <div class="col col-md-3">
+                                                                <button type="button"
+                                                                    class="btn btn-danger btn-rounded btn-icon"
+                                                                    (click)="Remove(i.formation_Id)">
+                                                                    <i class="mdi mdi-account-remove"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a
+                                href="../../../../../www.bootstrapdash.com/index.html" target="_blank">Bootstrap admin
+                                template</a> from BootstrapDash.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
+                            rights reserved.</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+</body>
