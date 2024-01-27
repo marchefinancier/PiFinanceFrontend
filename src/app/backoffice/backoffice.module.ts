@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { ListeformationsComponent } from './listeformations/listeformations.component';
+import { SignupAdminComponent } from './signup-admin/signup-admin.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatTableModule } from '@angular/material/table';
     ListeusersComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListeformationsComponent,
+    SignupAdminComponent
   ],
   imports: [
     CommonModule,
